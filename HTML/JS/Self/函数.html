@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Document</title>
+	<script>
+		//利用函数反转数组
+		function reverse(arr) {
+			var Array = [];
+			for (let i = arr.length - 1; i >= 0; i--) {
+				Array[Array.length] = arr[i];
+			}
+			return Array;
+		}
+		var array1 = reverse([1, 6, 8, 9, 8, 6, 2]);
+		console.log(array1);
+
+		//利用函数冒泡排序 sort 排序
+		function sort(arr) {
+			for (let i = 0; i < arr.length; i++) {
+				for (let j = 0; j < arr.length - i - 1; j++) {
+					if (arr[j] > arr[j + 1]) {
+						var temp = arr[j];
+						arr[j] = arr[j + 1];
+						arr[j + 1] = temp;
+					}
+				}
+			}
+			return arr;
+		}
+		var array2 = sort([1, 6, 8, 9, 8, 6, 2]);
+		console.log(array2);
+
+		//利用函数判断是否是闰年
+		/* 
+			(闰年的条件是符合下面两个条件之一： 
+				1、能被4整除，但不能被100整除； 
+				2、能被4整除，又能被400整除）。 
+			因为能够被400整除一定能被4整除所以第二个条件可以简化为能够被400整除)
+		 */
+		function isRunYear(year) {
+			var flag = false;
+			if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+				flag = true;
+			}
+			return flag;
+		}
+
+		console.log(isRunYear(1));
+		console.log(isRunYear(2));
+		console.log(isRunYear(3));
+		console.log(isRunYear(4));
+		console.log(isRunYear(5));
+		var num = parseInt(prompt("请输入一个数字判断是否是闰年"));
+		console.log(num + ":" + isRunYear(num));
+
+	</script>
+</head>
+
+<body></body>
+
+</html>
